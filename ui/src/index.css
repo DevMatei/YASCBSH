@@ -3,8 +3,9 @@ body {
   font-family: 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121212; /* Dark Gray */
-  color: #FFFFFF; /* Light Text */
+  background-color: #191414; /* Spotify Dark Background */
+  color: #B3B3B3; /* Spotify Light Gray Text */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
@@ -17,32 +18,40 @@ code {
 
 /* Header Styling */
 .header {
-  background-color: #1DB954; /* Green Accent */
+  background-color: #1DB954; /* Spotify Green Accent */
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header:hover {
+  background-color: #1ed760; /* Lighter Green on Hover */
+  box-shadow: 0 8px 16px rgba(29, 185, 84, 0.3);
 }
 
 /* Button Styling */
 .button-primary {
-  background-color: #1DB954; /* Green Accent */
+  background-color: #1DB954; /* Spotify Green */
   border: none;
   color: #FFFFFF;
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .button-primary:hover {
-  background-color: #1ed760;
+  background-color: #1ed760; /* Lighter Green on Hover */
   box-shadow: 0 0 10px rgba(29, 185, 84, 0.7);
+  transform: scale(1.05);
 }
 
 /* Card Styling */
 .card {
-  background-color: #181818; /* Darker Gray */
+  background-color: #262626; /* Spotify Dark Card Background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -56,19 +65,19 @@ code {
 
 /* Error Message Styling */
 .error-message {
-  color: #E22134; /* Error Red */
+  color: #E22134; /* Spotify Red for Errors */
 }
 
 /* Link Styling */
 a {
-  color: #1DB954; /* Green Accent */
+  color: #1DB954; /* Spotify Green Links */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
+  color: #1ed760; /* Lighter Green on Hover */
   text-decoration: underline;
-  color: #1ed760;
 }
 
 /* Responsive Design */
@@ -76,6 +85,7 @@ a:hover {
   .header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px;
   }
   
   .button-primary {
@@ -88,24 +98,54 @@ a:hover {
   }
 }
 
-/* Dark Mode Toggle (Optional) */
+/* Dark Mode Toggle */
 body.dark-mode {
   background-color: #121212;
-  color: #FFFFFF;
+  color: #B3B3B3;
+  
+  .header {
+    background-color: #1DB954;
+  }
+  
+  .button-primary {
+    background-color: #1DB954;
+  }
+  
+  .button-primary:hover {
+    background-color: #1ed760;
+  }
+  
+  .card {
+    background-color: #262626;
+  }
 }
 
-body.dark-mode .header {
-  background-color: #1DB954;
+/* Additional Modern Enhancements */
+.card img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-body.dark-mode .button-primary {
-  background-color: #1DB954;
+.card img:hover {
+  transform: scale(1.05);
 }
 
-body.dark-mode .button-primary:hover {
-  background-color: #1ed760;
+.button-secondary {
+  background-color: transparent;
+  border: 2px solid #1DB954; /* Spotify Green Border */
+  color: #1DB954; /* Spotify Green Text */
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode .card {
-  background-color: #181818;
+.button-secondary:hover {
+  background-color: #1DB954; /* Green Background on Hover */
+  color: #FFFFFF; /* White Text on Hover */
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }

@@ -46,8 +46,6 @@ import Navbar from './components/Navbar'
 import { CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core'
 import { useState, useMemo } from 'react'
 
-
-
 const history = createHashHistory()
 
 if (config.gaTrackingId) {
@@ -81,14 +79,6 @@ const adminStore = createAdminStore({
 
 const App = () => (
   <Provider store={adminStore}>
-    <Admin />
-  </Provider>
-)
-
-const Admin = (props) => {
-  useChangeThemeColor()
-  /* eslint-disable react/jsx-key */
-  return (
     <RAAdmin
       disableTelemetry
       dataProvider={dataProvider}
@@ -99,7 +89,6 @@ const Admin = (props) => {
       layout={Layout}
       loginPage={Login}
       logoutButton={Logout}
-      {...props}
     >
       {(permissions) => [
         <Resource name="album" {...album} options={{ subMenu: 'albumList' }} />,
@@ -155,9 +144,8 @@ const Admin = (props) => {
         <Player />,
       ]}
     </RAAdmin>
-  )
-  /* eslint-enable react/jsx-key */
-}
+  </Provider>
+)
 
 const AppWithHotkeys = () => {
   const [darkMode, setDarkMode] = useState(false)
@@ -186,7 +174,7 @@ const AppWithHotkeys = () => {
     setDarkMode(!darkMode)
   }
 
-return (
+  return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -198,8 +186,5 @@ return (
     </ThemeProvider>
   )
 }
-
-
-
 
 export default AppWithHotkeys
