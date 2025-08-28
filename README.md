@@ -2,15 +2,6 @@
 
 # YASCBSH - Yet Another Spotify Clone But Self-Hosted &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20paying%20for%20music%20subscriptions%2C%20and%20not%20finding%20what%20you%20really%20like%3F%20Roll%20your%20own%20streaming%20service%21&url=https://yascbsh.org&via=yascbsh)
 
-[![Last Release](https://img.shields.io/github/v/release/yascbsh/yascbsh?logo=github&label=latest&style=flat-square)](https://github.com/yascbsh/yascbsh/releases)
-[![Build](https://img.shields.io/github/actions/workflow/status/yascbsh/yascbsh/pipeline.yml?branch=master&logo=github&style=flat-square)](https://nightly.link/yascbsh/yascbsh/workflows/pipeline/master)
-[![Downloads](https://img.shields.io/github/downloads/yascbsh/yascbsh/total?logo=github&style=flat-square)](https://github.com/yascbsh/yascbsh/releases/latest)
-[![Docker Pulls](https://img.shields.io/docker/pulls/deluan/yascbsh?logo=docker&label=pulls&style=flat-square)](https://hub.docker.com/r/deluan/yascbsh)
-[![Dev Chat](https://img.shields.io/discord/671335427726114836?logo=discord&label=discord&style=flat-square)](https://discord.gg/xh7j7yF)
-[![Subreddit](https://img.shields.io/reddit/subreddit-subscribers/yascbsh?logo=reddit&label=/r/yascbsh&style=flat-square)](https://www.reddit.com/r/yascbsh/)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0-ff69b4.svg?style=flat-square)](CODE_OF_CONDUCT.md)
-[![Gurubase](https://img.shields.io/badge/Gurubase-Ask%20YASCBSH%20Guru-006BFF?style=flat-square)](https://gurubase.io/g/yascbsh)
-
 YASCBSH is an open source self-hosted music collection server and streamer. It gives you the freedom to listen to your
 music collection from any browser or mobile device. It's like your personal Spotify!
 
