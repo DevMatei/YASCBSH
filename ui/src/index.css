@@ -1,17 +1,111 @@
 body {
   margin: 0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #121212; /* Dark Gray */
+  color: #FFFFFF; /* Light Text */
 }
 
 code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .rc-slider {
   z-index: 78;
+}
+
+/* Header Styling */
+.header {
+  background-color: #1DB954; /* Green Accent */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Button Styling */
+.button-primary {
+  background-color: #1DB954; /* Green Accent */
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #1ed760;
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.7);
+}
+
+/* Card Styling */
+.card {
+  background-color: #181818; /* Darker Gray */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #E22134; /* Error Red */
+}
+
+/* Link Styling */
+a {
+  color: #1DB954; /* Green Accent */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #1ed760;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .button-primary {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .card {
+    width: 100%;
+  }
+}
+
+/* Dark Mode Toggle (Optional) */
+body.dark-mode {
+  background-color: #121212;
+  color: #FFFFFF;
+}
+
+body.dark-mode .header {
+  background-color: #1DB954;
+}
+
+body.dark-mode .button-primary {
+  background-color: #1DB954;
+}
+
+body.dark-mode .button-primary:hover {
+  background-color: #1ed760;
+}
+
+body.dark-mode .card {
+  background-color: #181818;
 }

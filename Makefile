@@ -24,7 +24,7 @@ setup: check_env download-deps install-golangci-lint setup-git ##@1_Run_First In
 	@(cd ./ui && npm ci)
 .PHONY: setup
 
-dev: check_env   ##@Development Start Navidrome in development mode, with hot-reload for both frontend and backend
+dev: check_env   ##@Development Start YASCBSH in development mode, with hot-reload for both frontend and backend
 	ND_ENABLEINSIGHTSCOLLECTOR="false" npx foreman -j Procfile.dev -p 4533 start
 .PHONY: dev
 
@@ -168,7 +168,7 @@ docker-msi: ##@Cross_Compilation Build MSI installer for Windows
 	@du -h binaries/msi/*.msi
 .PHONY: docker-msi
 
-run-docker: ##@Development Run a Navidrome Docker image. Usage: make run-docker tag=<tag>
+run-docker: ##@Development Run a YASCBSH Docker image. Usage: make run-docker tag=<tag>
 	@if [ -z "$(tag)" ]; then echo "Usage: make run-docker tag=<tag>"; exit 1; fi
 	@TAG_DIR="tmp/$$(echo '$(tag)' | tr '/:' '_')"; mkdir -p "$$TAG_DIR"; \
     VOLUMES="-v $(PWD)/$$TAG_DIR:/data"; \
@@ -187,7 +187,7 @@ package: docker-build ##@Cross_Compilation Create binaries and packages for ALL 
 	goreleaser release -f release/goreleaser.yml --clean --skip=publish --snapshot
 .PHONY: package
 
-get-music: ##@Development Download some free music from Navidrome's demo instance
+get-music: ##@Development Download some free music from YASCBSH's demo instance
 	mkdir -p music
 	( cd music; \
 	curl "https://demo.navidrome.org/rest/download?u=demo&p=demo&f=json&v=1.8.0&c=dev_download&id=2Y3qQA6zJC3ObbBrF9ZBoV" > brock.zip; \

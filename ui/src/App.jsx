@@ -42,6 +42,11 @@ import SharePlayer from './share/SharePlayer'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import missing from './missing/index.js'
+import Navbar from './components/Navbar'
+import { CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core'
+import { useState, useMemo } from 'react'
+
+
 
 const history = createHashHistory()
 
@@ -155,18 +160,46 @@ const Admin = (props) => {
 }
 
 const AppWithHotkeys = () => {
-  let language = localStorage.getItem('locale') || 'en'
-  document.documentElement.lang = language
-  if (config.enableSharing && shareInfo) {
-    return <SharePlayer />
+  const [darkMode, setDarkMode] = useState(false)
+
+  const theme = useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: darkMode ? 'dark' : 'light',
+          primary: {
+            main: '#1DB954',
+          },
+          background: {
+            default: darkMode ? '#121212' : '#FFFFFF',
+            paper: darkMode ? '#181818' : '#FFFFFF',
+          },
+          text: {
+            primary: darkMode ? '#FFFFFF' : '#000000',
+          },
+        },
+      }),
+    [darkMode],
+  )
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
   }
-  return (
-    <HotKeys keyMap={keyMap}>
-      <DndProvider backend={HTML5Backend}>
-        <App />
-      </DndProvider>
-    </HotKeys>
+
+return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <HotKeys keyMap={keyMap}>
+        <DndProvider backend={HTML5Backend}>
+          <App />
+        </DndProvider>
+      </HotKeys>
+    </ThemeProvider>
   )
 }
+
+
+
 
 export default AppWithHotkeys
